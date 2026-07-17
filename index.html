@@ -166,6 +166,25 @@ button{font-family:inherit; cursor:pointer;}
 @media(max-width:1024px){.projGrid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:600px){.projGrid{grid-template-columns:1fr;}}
 
+/* ---------- Project flip card (testimonials) ---------- */
+.projCard.flipCard{padding:0; perspective:1800px;}
+.cardInner{position:relative; width:100%; transition:transform .65s cubic-bezier(.4,.2,.2,1); transform-style:preserve-3d;}
+.projCard.flipped .cardInner{transform:rotateY(180deg);}
+.cardFront{display:flex; flex-direction:column; gap:.9rem; padding:1.75rem; backface-visibility:hidden; -webkit-backface-visibility:hidden;}
+.cardBack{position:absolute; inset:0; backface-visibility:hidden; -webkit-backface-visibility:hidden; transform:rotateY(180deg); background:var(--card); border-radius:20px; padding:1.75rem; display:flex; flex-direction:column; overflow-y:auto;}
+.backBtn{background:none; border:none; color:var(--teal); font-size:.78rem; font-weight:600; letter-spacing:.04em; text-transform:uppercase; cursor:pointer; padding:0; margin-bottom:1.1rem; display:inline-flex; align-items:center; gap:.3rem; transition:color .2s; align-self:flex-start;}
+.backBtn:hover{color:var(--gold);}
+.testiList{display:flex; flex-direction:column; gap:1.1rem;}
+.testiItem{padding-bottom:1.1rem; border-bottom:1px solid var(--cream3);}
+.testiItem:last-child{border-bottom:none; padding-bottom:0;}
+.testiQuoteIcon{font-family:var(--ff-serif); font-size:1.6rem; color:var(--gold); font-weight:900; line-height:1; display:block; margin-bottom:.3rem;}
+.testiTitle{font-family:var(--ff-serif); font-size:.98rem; font-weight:600; color:var(--ink); margin-bottom:.4rem; line-height:1.3;}
+.highlight-word {color:var(--gold);}
+.testiText{color:var(--muted); font-size:.85rem; line-height:1.65; margin-bottom:.6rem;}
+.testiName{font-size:.82rem; font-weight:600; color:var(--ink2); display:block;}
+.testiRole{font-size:.74rem; color:var(--muted);}
+.testiinfo{display:flex;align-items:center;gap:8px;}.testiinfo span{display:inline;white-space:nowrap;}.testiQuoteIcon{font-size:32px;}.testiName{font-weight:600;}.testiRole{color:#777;}
+
 /* ---------- Skills ---------- */
 .skillsSection{padding:5rem 0;}
 .skillsLayout{display:grid; grid-template-columns:300px 1fr; gap:3rem; align-items:start;}
@@ -292,7 +311,7 @@ a.cValue:hover{color:var(--gold);}
       <p class="heroDesc">Software developer building full-stack applications with JavaScript, React, Node.js, Express, PostgreSQL, and MongoDB, alongside systems programming in C++ and Python. Independently designed and shipped three complete applications — financial tracking, scheduling, and productivity tooling — end to end, from database design to deployed UI.</p>
       <div class="heroBtns">
         <a href="#projects" class="btnSolid">View My Work →</a>
-        <a href="Rajeshwaran_Resume.pdf" download class="btnOutline">Download Resume</a>
+        <a href="Rajeshwaran_Resume.pdf" download class="btnOutline">Download Resume ↓</a>
       </div>
       <div class="heroSoc">
         <a class="socBtn" href="mailto:rajeshwaran9585rajesh@gmail.com" aria-label="Email" title="Email">✉</a>
@@ -305,7 +324,7 @@ a.cValue:hover{color:var(--gold);}
       <div class="heroCard">
         <div class="cardLabel">Currently</div>
         <div class="cardTitle">B.Tech, Information Technology</div>
-        <div class="cardSub">SRM Institute of Science and Technology · CGPA 9.28 · Graduating May 2026</div>
+        <div class="cardSub">SRM Institute of Science and Technology · <b>CGPA 9.28</b> · Graduating May 2026</div>
         <span class="cardTag">Class of 2026</span>
       </div>
       <div class="heroCard">
@@ -333,27 +352,66 @@ a.cValue:hover{color:var(--gold);}
       <div class="rule"></div>
     </div>
     <div class="projGrid">
-      <div class="projCard reveal">
-        <div class="emoji">💰</div>
-        <div>
-          <div class="projTitle">Community Loan Management System</div>
-          <div class="projMeta">Jan 2026 – Mar 2026</div>
+      <div class="projCard flipCard reveal">
+        <div class="cardInner">
+          <div class="cardFront">
+            <div class="emoji">🗁</div>
+            <div>
+              <div class="projTitle">Community Loan Management System</div>
+              <div class="projMeta">Jan 2026 – Mar 2026</div>
+            </div>
+            <p class="projDesc">Built to replace manual loan bookkeeping with a centralized digital platform, helping a community of 40+ borrowers track loans, repayments, and outstanding balances accurately</p>
+            <ul class="projPoints">
+              <li>Responsive admin dashboard tracking disbursements, EMI progress, and repayment status</li>
+              <li>Multi-tier balance recovery mechanism for incomplete historical records</li>
+              <li>Financial engine that carries forward unpaid payments across billing periods</li>
+            </ul>
+            <div class="tags"><span class="tag">JavaScript</span><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span><span class="tag">TypeScript</span></div>
+            <div style="display: flex; flex-direction: row; gap: 16px; align-items: center;">
+              <a class="projLink" href="https://github.com/Rajeshwarantask/Loan-app" target="_blank" rel="noopener">View Code →</a>
+              <a class="projLink" href="https://vizhuthugal-sangam.vercel.app/" target="_blank" rel="noopener">View Live Project →</a>
+              <a class="projLink testimonial-toggle" href="#" onclick="toggleTestimonial(this); return false;">View Testimonial →</a>
+            </div>
+          </div>
+          <div class="cardBack">
+            <button class="backBtn" onclick="toggleTestimonial(this); return false;">← Back to project</button>
+            <div class="testiList">
+              <div class="testiItem">
+                  <div class="testiinfo">
+                      <span class="testiQuoteIcon">👤</span>
+                      <span class="testiName">Parthiban</span>
+                      <span class="testiRole">Treasurer</span>
+                      <span class="ratings">⭐⭐⭐⭐⭐</span>
+                  </div>
+                  <div class="testiTitle">Finally, no more notebooks</div>
+                  <p class="testiText">Track member payments, monitor balances and generate reports—all from a single, clean dashboard . Nomore notebooks, just organized records at your fingertips.</p>
+              </div>
+                <div class="testiItem">
+                  <div class="testiinfo">
+                      <span class="testiQuoteIcon">👤</span>
+                      <span class="testiName">Mohan</span>
+                      <span class="testiRole">Client</span>
+                      <span class="ratings">⭐⭐⭐⭐</span>
+                  </div>
+                  <div class="testiTitle">Helps to track my loan data</div>
+                  <p class="testiText">Checking my dues takes just a few seconds now. It's <span class="highlight-word">easier</span> than keeping track manually or asking for updates.</p>
+              </div>
+              <div class="testiItem">
+                  <div class="testiinfo">
+                      <span class="testiQuoteIcon">👤</span>
+                      <span class="testiName">Sudeshwaran</span>
+                      <span class="testiRole">Client</span>
+                      <span class="ratings">⭐⭐⭐⭐⭐</span>
+                  </div>
+                  <div class="testiTitle">Much <span class="highlight-word">easier</span> to check my balance</div>
+                  <p class="testiText">I used to have to ask around to know what I still owed. Now I just log in and it's right there.</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <p class="projDesc">Built to replace manual loan bookkeeping with a centralized digital platform, helping a community of 40+ borrowers track loans, repayments, and outstanding balances accurately</p>
-        <ul class="projPoints">
-          <li>Responsive admin dashboard tracking disbursements, EMI progress, and repayment status</li>
-          <li>Multi-tier balance recovery mechanism for incomplete historical records</li>
-          <li>Financial engine that carries forward unpaid payments across billing periods</li>
-        </ul>
-        <div class="tags"><span class="tag">JavaScript</span><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span><span class="tag">TypeScript</span></div>
-        <div style="display: flex; flex-direction: row; gap: 16px; align-items: center;">
-          <a class="projLink" href="https://github.com/Rajeshwarantask/Loan-app" target="_blank" rel="noopener">View on GitHub →</a>
-          <a class="projLink" href="https://vizhuthugal-sangam.vercel.app/" target="_blank" rel="noopener">View Live Project →</a>
-        </div>
-
       </div>
       <div class="projCard reveal">
-        <div class="emoji">📋</div>
+        <div class="emoji">⌯⌲</div>
         <div>
           <div class="projTitle">Smart Job Application Tracker</div>
           <div class="projMeta">Aug 2025 – Nov 2025</div>
@@ -372,7 +430,7 @@ a.cValue:hover{color:var(--gold);}
         </div>
       </div>
       <div class="projCard reveal">
-        <div class="emoji">🏫</div>
+        <div class="emoji">⚙</div>
         <div>
           <div class="projTitle">Classroom Availability &amp; Allocation System</div>
           <div class="projMeta">Jan 2025 – Jul 2025</div>
@@ -391,7 +449,10 @@ a.cValue:hover{color:var(--gold);}
       </div>
     </div>
   </div>
+  
 </section>
+
+
 
 <!-- SKILLS -->
 <section id="skills" class="skillsSection">
@@ -456,6 +517,7 @@ a.cValue:hover{color:var(--gold);}
       
 </section>
 
+
 <!-- CERTIFICATIONS -->
 <section id="certifications" class="certSection">
   <div class="inner">
@@ -472,7 +534,7 @@ a.cValue:hover{color:var(--gold);}
         <div class="certDate">April 2025</div>
       </div>
       <div class="certCard reveal">
-        <div class="certIcon">⚙️</div>
+        <div class="certIcon">🌣</div>
         <div class="certTitle">Big Data Computing — Elite + Silver</div>
         <div class="certIssuer">NPTEL</div>
         <div class="certDate">September 2024</div>
@@ -621,6 +683,63 @@ function typeLoop(){
 }
 typeLoop();
 
+// Flip project card to reveal testimonials
+// ===============================
+// Project Card Auto Testimonial Flip
+// ===============================
+
+// Manual flip (View Testimonial / Back)
+function toggleTestimonial(el) {
+    const card = el.closest(".flipCard");
+    if (!card) return;
+
+    // First manual interaction permanently disables auto flip
+    if (!card.dataset.manual) {
+        card.dataset.manual = "true";
+        clearTimeout(card.autoTimer);
+    }
+
+    card.classList.toggle("flipped");
+}
+
+// Auto flip only once when card enters viewport
+document.querySelectorAll(".flipCard").forEach(card => {
+
+    card.dataset.manual = "false";
+
+    const observer = new IntersectionObserver(([entry]) => {
+
+        // If user has already interacted manually,
+        // never auto flip again.
+        if (card.dataset.manual === "true") return;
+
+        clearTimeout(card.autoTimer);
+
+        if (entry.isIntersecting) {
+
+            card.autoTimer = setTimeout(() => {
+
+                if (card.dataset.manual === "false") {
+                    card.classList.add("flipped");
+                }
+
+            }, 8000); // Wait 8 seconds
+
+        } else {
+
+            clearTimeout(card.autoTimer);
+            card.classList.remove("flipped");
+
+        }
+
+    }, {
+        threshold: 0.7
+    });
+
+    observer.observe(card);
+
+});
+
 // Contact form -> mailto
 document.getElementById('contactForm').addEventListener('submit', function(e){
   e.preventDefault();
@@ -629,6 +748,8 @@ document.getElementById('contactForm').addEventListener('submit', function(e){
   const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
   window.location.href = `mailto:rajeshwaran9585rajesh@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 });
+
+
 </script>
 </body>
 </html>
