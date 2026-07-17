@@ -201,6 +201,12 @@ button{font-family:inherit; cursor:pointer;}
 .sgTag:hover{background:rgba(200,148,58,.1); border-color:rgba(200,148,58,.3); color:var(--gold);}
 @media(max-width:1024px){.skillsLayout{grid-template-columns:1fr;}}
 @media(max-width:600px){.skillsGrid{grid-template-columns:1fr;}}
+.logo-marquee{margin-top:3rem; margin-bottom:-6rem; overflow:hidden; position:relative; width:100%; mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent); -webkit-mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent);}
+.logo-track{display:flex; align-items:center; gap:3rem; width:max-content; animation:marquee 35s linear infinite;}
+.logo-track img{width:42px; height:42px; flex-shrink:0; transition:.3s ease; opacity:1; filter:none;}
+.logo-track img:hover{transform:translateY(-5px) scale(1.15);}
+@keyframes marquee{from{transform:translateX(0);} to{transform:translateX(-50%);}}
+
 
 /* ---------- Certifications (replaces "Freelance services" slot) ---------- */
 .certSection{background:var(--cream2); padding:5rem 0;}
@@ -263,6 +269,7 @@ a.cValue:hover{color:var(--gold);}
 .footerLinks a{color:rgba(250,247,242,.5); font-size:.82rem; transition:color .2s;}
 .footerLinks a:hover{color:var(--gold2);}
 
+
 @media(max-width:768px){.aboutSection,.expSection,.projSection,.skillsSection,.certSection,.contactSection{padding:3.5rem 0;}}
 @media(max-width:576px){.aboutSection,.expSection,.projSection,.skillsSection,.certSection,.contactSection{padding:2.5rem 0;}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important;}}
@@ -308,7 +315,7 @@ a.cValue:hover{color:var(--gold);}
       <span class="chip"><span class="blinkDot"></span>Available for opportunities</span>
       <h1 class="heroName">Rajeshwaran<span class="nameEm"> M</span></h1>
       <p class="heroRole"><strong id="typedRole">Full-Stack Developer</strong><span class="cursor">|</span></p>
-      <p class="heroDesc">Software developer building full-stack applications with JavaScript, React, Node.js, Express, PostgreSQL, and MongoDB, alongside systems programming in C++ and Python. Independently designed and shipped three complete applications — financial tracking, scheduling, and productivity tooling — end to end, from database design to deployed UI.</p>
+      <p class="heroDesc">Software developer building full-stack applications with JavaScript, React, Node.js, Express, PostgreSQL, and MongoDB, alongside systems programming in C++ and Python. Independently designed and shipped four complete applications — financial tracking, scheduling, and productivity tooling — end to end, from database design to deployed UI.</p>
       <div class="heroBtns">
         <a href="#projects" class="btnSolid">View My Work →</a>
         <a href="Rajeshwaran_Resume.pdf" download class="btnOutline">Download Resume ↓</a>
@@ -485,6 +492,9 @@ a.cValue:hover{color:var(--gold);}
           <div class="sgTags"><span class="sgTag">GitHub</span><span class="sgTag">VS Code</span><span class="sgTag">Postman</span></div>
         </div>
       </div>
+    </div>
+    <div class="logo-marquee">
+      <div class="logo-track"> </div>
     </div>
   </div>
 </section>
@@ -749,6 +759,36 @@ document.getElementById('contactForm').addEventListener('submit', function(e){
   window.location.href = `mailto:rajeshwaran9585rajesh@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 });
 
+const skills = [
+  "javascript",
+  "typescript",
+  "react",
+  "nodedotjs",
+  "express",
+  "html5",
+  "css",
+  "mongodb",
+  "postgresql",
+  "git",
+  "github",
+  "postman",
+  "vercel",
+  "cplusplus",
+  "python"
+];
+
+const track = document.querySelector(".logo-track");
+
+track.innerHTML = [...skills, ...skills]
+  .map(
+    skill => `
+      <img
+        src="https://cdn.simpleicons.org/${skill}"
+        alt="${skill}"
+        loading="lazy">
+    `
+  )
+  .join("");
 
 </script>
 </body>
