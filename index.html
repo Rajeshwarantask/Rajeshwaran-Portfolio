@@ -331,11 +331,11 @@ a.cValue:hover{color:var(--gold);}
       <div class="heroCard">
         <div class="cardLabel">Currently</div>
         <div class="cardTitle">B.Tech, Information Technology</div>
-        <div class="cardSub">SRM Institute of Science and Technology · <b>CGPA 9.28</b> · Graduating May 2026</div>
+        <div class="cardSub">SRM Institute of Science and Technology · <b>CGPA 9.25/10</b> · Sep 2022 - May 2026</div>
         <span class="cardTag">Class of 2026</span>
       </div>
       <div class="heroCard">
-        <div class="cardLabel">Latest Project</div>
+        <div class="cardLabel">Featured Project</div>
         <div class="cardTitle">Community Loan Management System</div>
         <div class="cardSub">Full-stack PWA tracking ₹10M+ in loans for 40+ active borrowers.</div>
         <span class="cardTag">React · Node.js · PostgreSQL</span>
@@ -369,11 +369,12 @@ a.cValue:hover{color:var(--gold);}
             </div>
             <p class="projDesc">Built to replace manual loan bookkeeping with a centralized digital platform, helping a community of 40+ borrowers track loans, repayments, and outstanding balances accurately</p>
             <ul class="projPoints">
-              <li>Responsive admin dashboard tracking disbursements, EMI progress, and repayment status</li>
+              <li>Architected a centralized admin dashboard displaying real-time EMI collection status, pending payments, top-up loan tracking, additional principal payments.</li>
               <li>Multi-tier balance recovery mechanism for incomplete historical records</li>
               <li>Financial engine that carries forward unpaid payments across billing periods</li>
+              <li>Responsive admin dashboard tracking disbursements, EMI progress, and repayment status</li>
             </ul>
-            <div class="tags"><span class="tag">JavaScript</span><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span><span class="tag">TypeScript</span></div>
+            <div class="tags"><span class="tag">JavaScript</span><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">TypeScript</span></div>
             <div style="display: flex; flex-direction: row; gap: 16px; align-items: center;">
               <a class="projLink" href="https://github.com/Rajeshwarantask/Loan-app" target="_blank" rel="noopener">View Code →</a>
               <a class="projLink" href="https://vizhuthugal-sangam.vercel.app/" target="_blank" rel="noopener">View Live Project →</a>
@@ -420,20 +421,18 @@ a.cValue:hover{color:var(--gold);}
       <div class="projCard reveal">
         <div class="emoji">⌯⌲</div>
         <div>
-          <div class="projTitle">Smart Job Application Tracker</div>
-          <div class="projMeta">Aug 2025 – Nov 2025</div>
+          <div class="projTitle">API Failure Simulation & Resilience-Testing Platform</div>
+          <div class="projMeta">Aug 2026 – Sep 2026</div>
         </div>
-        <p class="projDesc">Created to eliminate manual tracking of job applications by automatically organizing Gmail notifications into a single dashboard with application status and analytics.</p>
+        <p class="projDesc">Built to simulate unreliable API behavior in a controlled environment, allowing developers to reproduce failures, inspect request execution, and test how applications respond to errors, degraded services, and recovery scenarios.</p>
         <ul class="projPoints">
-          <li>Automated detection and classification of application-related emails</li>
-          <li>Built an intelligent email parsing engine supporting HTML, plain text, and multipart email formats.</li>
-          <li>Implemented automated email-to-job matching using company, role, and timeline-based confidence scoring.</li>
-          <li>Analytics dashboards surfacing response rates and application-stage trends</li>
-        </ul>
-        <div class="tags"><span class="tag">JavaScript</span><span class="tag">React</span><span class="tag">Gmail API</span><span class="tag">OAuth</span></div>
+            <li>Engineered a programmable request interception engine matching method, path, headers, query parameters, and request body</li>
+            <li>Implemented 15 failure conditions covering HTTP errors, timeouts, latency, connection failures, and malformed responses.</li>
+            <li>Developed deterministic resilience workflows with seeded probability, replay, and multi-step failure/recovery attempts</li>
+            <div class="tags"><span class="tag">JavaScript</span><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">TypeScript</span></div>
         <div style="display: flex; flex-direction: row; gap: 16px; align-items: center;">
-          <a class="projLink" href="https://github.com/Rajeshwarantask/job-app" target="_blank" rel="noopener">View on GitHub →</a>
-          <a class="projLink" href="https://easyjob-1.vercel.app/" target="_blank" rel="noopener">View Live Project →</a>
+          <a class="projLink" href="https://github.com/Rajeshwarantask/API-Failure-app" target="_blank" rel="noopener">View on GitHub →</a>
+          <a class="projLink" href="https://faultline-api-app.vercel.app/" target="_blank" rel="noopener">View Live Project →</a>
         </div>
       </div>
       <div class="projCard reveal">
@@ -442,9 +441,9 @@ a.cValue:hover{color:var(--gold);}
           <div class="projTitle">Classroom Availability &amp; Allocation System</div>
           <div class="projMeta">Jan 2025 – Jul 2025</div>
         </div>
-        <p class="projDesc">Smart scheduling app that optimizes classroom usage and reduces conflicts in academic institutions. Developed to help faculty quickly find available classrooms and reduce scheduling conflicts caused by manual timetable searches.</p>
+        <p class="projDesc">Smart scheduling app that optimizes classroom usage and eliminate hallway wandering — instant classroom, lab, and faculty availability checks without physical verification.</p>
         <ul class="projPoints">
-          <li>Timetable ingestion pipeline parsing Word documents into structured records</li>
+            <li>Engineered multi-resource search workflows — Class rooms, projector-equipped spaces, and faculty — querying schedules across 8 periods; returns occupancy context for taken slots and suggests an alternative free resource.</li>
           <li>11 REST API endpoints powering room search and real-time scheduling</li>
           <li>Set-based lookups replacing array scans for O(1) occupancy checks</li>
         </ul>
@@ -536,7 +535,13 @@ a.cValue:hover{color:var(--gold);}
       <h2 class="secTitle">Certifications</h2>
       <div class="rule"></div>
     </div>
-    <div class="certGrid">
+        <div class="certGrid">
+            <div class="certCard reveal">
+            <div class="certIcon">☰</div>
+            <div class="certTitle">Craft Precise Prompts for AI Models</div>
+            <div class="certIssuer">IBM </div>
+            <div class="certDate">July 2026</div>
+        </div>
       <div class="certCard reveal">
         <div class="certIcon">JS</div>
         <div class="certTitle">Meta Programming with JavaScript</div>
@@ -548,12 +553,6 @@ a.cValue:hover{color:var(--gold);}
         <div class="certTitle">Big Data Computing — Elite + Silver</div>
         <div class="certIssuer">NPTEL</div>
         <div class="certDate">September 2024</div>
-      </div>
-      <div class="certCard reveal">
-        <div class="certIcon">☰</div>
-        <div class="certTitle">Meta Front-End Developer</div>
-        <div class="certIssuer">Meta</div>
-        <div class="certDate">March 2024</div>
       </div>
       <div class="certCard reveal">
         <div class="certIcon">Py</div>
